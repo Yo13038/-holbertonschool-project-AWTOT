@@ -1,0 +1,7 @@
+.lieu {
+    display: flex;
+}
+
+.lieu img {
+    width: 50%;
+}
