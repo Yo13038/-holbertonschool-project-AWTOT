@@ -1,12 +1,12 @@
 # A Weeb Tour in Tokyo
 
-Bienvenue sur le dépôt du projet **A Weeb Tour in Tokyo**. Ce site web est un guide touristique conçu pour les passionnés de pop culture japonaise, de mangas, d'animés et de jeux vidéo, regroupant 10 lieux incontournables de la capitale nippone.
+Bienvenue sur le dépôt du projet **A Weeb Tour in Tokyo**. Ce site web interactif est un guide touristique conçu pour les passionnés de pop culture japonaise, de mangas, d'animés et de jeux vidéo, regroupant 10 lieux incontournables de la capitale nippone.
 
 ---
 
 ## Fonctionnalités & Design
 
-* **Carte du parcours :** une carte de Tokyo au format cinéma (16/9) présentée en haut de page (hero), encadrée et mise en valeur par une ombre rose néon. Les zones cliquables vers chaque lieu sont en cours d'intégration.
+* **Carte interactive :** une carte de Tokyo au format cinéma (16/9) présentée en haut de page (hero), encadrée et mise en valeur par une ombre rose néon. Chaque lieu y est cliquable (le point s'illumine au survol) et renvoie en douceur, par défilement fluide, vers la section correspondante.
 * **Mise en page alternée :** un agencement en "Z" (image à gauche, puis à droite) grâce à Flexbox et au sélecteur `:nth-child(odd)` combiné à `flex-direction: row-reverse`.
 * **Design responsive :** sur écran étroit (moins de 768px), les lieux passent automatiquement en une seule colonne (image au-dessus du texte) via une media query.
 * **Thème Sakura / Tokyo City :** un arrière-plan de branche de cerisier (`images/fleur.png`) recouvert d'un voile blanc translucide (`linear-gradient`) pour garder le texte lisible. Contraste assumé : header vert forêt, titres et bordures d'images en rose néon.
@@ -25,6 +25,7 @@ Bienvenue sur le dépôt du projet **A Weeb Tour in Tokyo**. Ce site web est un 
   * Flexbox pour l'alignement et l'alternance des blocs (`:nth-child(odd)`).
   * Media query pour le responsive (`@media (max-width: 768px)`).
   * Propriétés modernes : `aspect-ratio`, `object-fit`, `box-shadow` (effet néon), `border-radius`, et `linear-gradient` (voile de fond).
+  * Carte cliquable sans JavaScript : liens positionnés en pourcentage par-dessus l'image (`position: absolute`) et défilement fluide (`scroll-behavior: smooth`).
 * **Google Fonts :** Mochiy Pop One et M PLUS Rounded 1c.
 
 ---
