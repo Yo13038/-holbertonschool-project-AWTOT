@@ -4,7 +4,7 @@ Bienvenue sur le dépôt du projet **A Weeb Tour in Tokyo** ! Ce site web intera
 
 ---
 
-## 🚀 Fonctionnalités & Design
+## Fonctionnalités & Design
 
 * **Carte Interactive (Image Map) :** Une carte de Tokyo au format cinéma (16/9) qui permet, en cliquant sur ses différentes zones, de descendre de manière fluide (`smooth scroll`) directement vers le lieu sélectionné.
 * **Mise en page alternée :** Un agencement dynamique en "Z" (une fois l'image à gauche, une fois à droite) pour une lecture moderne et agréable.
@@ -13,15 +13,15 @@ Bienvenue sur le dépôt du projet **A Weeb Tour in Tokyo** ! Ce site web intera
 
 ---
 
-## 🛠️ Technologies Utilisées
+## Technologies Utilisées
 
 * **HTML :** Structuration sémantique de la page (`<main>`, `<section>`, balises `<map>` et `<area>`).
 * **CSS :** * Flexbox pour l'alignement et l'alternance automatique des blocs (`:nth-child(even)`).
-  * Propriétés modernes (`aspect-ratio`, `object-fit`, `box-shadow` pour l'effet néon).
+* Propriétés modernes (`aspect-ratio`, `object-fit`, `box-shadow` pour l'effet néon).
 
 ---
 
-## 📂 Structure du Projet
+## Structure du Projet
 
 ```text
 ├── index.html          # Page principale du site
