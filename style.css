@@ -1,85 +1,178 @@
-header {
-    text-align: center;      /* Garde le titre centré */
-    padding: 50px 20px;      /* Donne de l'espace au header */
-    background-color: #0b251a; /* Un magnifique vert sapin très foncé */
-}
-
-header h1 {
-    color: #ff65a3;          /* Un rose néon qui ressort sur le vert */
-    font-size: 3.5rem;       /* Une grande taille pour qu'il soit bien en évidence */
-    font-family: 'Arial Black', sans-serif; /* Une police épaisse */
-    text-transform: uppercase; /* En majuscules*/
-    letter-spacing: 3px;     /* Écarte un peu les lettres */
-    margin: 0;
-    
-    /* Encadrement blanc du titre  */
-
-    -webkit-text-stroke: 2px #ffffff;
-}
-
-.hero img {
-    width: 70%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    object-position: center;
-
-    /* LES DEUX LIGNES POUR CENTRER : */
-    display: block;       /* 1. On transforme l'image en bloc */
-    margin: 0 auto;       /* 2. Les marges de gauche et droite calculent automatiquement l'espace pour centrer */
-    border: 20px solid #531606;
-    box-shadow: 0 0 20px rgba(255, 101, 163, 0.7);
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
-
-.lieu {
-    display: flex;         /* Aligne l'image et la div "texte" côte à côte */
-    align-items: center;   /* Centre verticalement le texte par rapport à l'image */
-    gap: 20px;            /* Crée un espace de 20 pixels entre l'image et le texte */
-    margin-bottom: 30px;   /* Ajout de l'espace sous chaque lieu */
-}
-
-
-.lieu img {
-    width: 10cm;
-    height: 5cm;
-    object-fit: cover;
-    flex-shrink: 0;        /* Empêche l'image de se déformer ou de rétrécir si le texte est long */
-    border: 5px solid #ff65a3; /* La bordure nette rose (comme le texte de ton titre) */
-    box-shadow: 0 0 15px rgba(255, 101, 163, 0.6);
-}
-
-/*stylise un peu le texte à droite */
-.texte {
-    flex: 1;/* Permet au texte de prendre tout l'espace restant à droite */
+/* ==========================================================================
+   0. CONFIGURATION GLOBALE
+   ========================================================================== */
+html {
+    scroll-behavior: smooth !important; /* Le !important force le navigateur à obéir */
 }
 
 body {
-background-image: url('images/fleur.png');
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+        url('images/fleur.png'); /* Voile blanc devant l'image de fond */
     
-    /* Ces 3 lignes permettent à l'image de fond de couvrir tout l'écran proprement : */
-    background-size: cover;       /* L'image s'étire pour remplir tout l'espace sans se déformer */
-    background-attachment: fixed; /* L'image reste fixe quand on fait défiler la page (effet très sympa !) */
-    background-position: center;  /* Centre la texture du bois */
+    background-size: cover;       /* étire l'image */
+    background-attachment: fixed; /* fix l'image du background*/
+    background-position: center;  
     
-
     color: #5c1f07;           
-    margin: 2;                
-    font-family: Arial, sans-serif;
-}
-/*cible une section "lieu" sur deux (les paires : 2, 4, 6, 8, 10...) */
-.lieu:nth-child(even) {
-    flex-direction: row-reverse; /*inverse l'ordre de l'image et du texte ! */
+    margin: 12px;                
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-/* Aligner le texte à droite quand l'image est à droite*/
-.lieu:nth-child(even) .texte {
+/* ==========================================================================
+   1. HEADER
+   ========================================================================== */
+header {
+    text-align: center;      
+    padding: 50px 20px;      
+    background-color: #0b251a; /* Vert sapin très foncé */
+}
+
+header h1 {
+    color: #ff65a3;          /* Rose néon */
+    font-size: 3.5rem;       
+    font-family: 'Mochiy Pop One', sans-serif; 
+    text-transform: uppercase; 
+    letter-spacing: 3px;     
+    margin: 0;
+    -webkit-text-stroke: 2px #ffffff; /* Encadrement blanc */
+}
+
+/* ==========================================================================
+   2. CARTE INTERACTIVE (HERO)
+   ========================================================================== */
+.hero {
+    position: relative;     /* position des points par-dessus la carte */
+    width: 70%;             /* garde largeur de 70% */
+    margin: 30px auto 40px; /* Centre le bloc de la carte */
+    border: 20px solid #531606;
+    box-shadow: 0 0 20px rgba(255, 101, 163, 0.7);
+    overflow: hidden;         /* Supprime un petit espace blanc sous l'image */
+}
+
+.hero img {
+    width: 100%;
+    display: block;       
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Style général des points néons cliquables */
+.point {
+    position: absolute;
+    width: 25px;            /* Diamètre du point */
+    height: 25px;               
+    border-radius: 75%;                         /* Cercle parfait */
+    transform: translate(-50%, -50%);           /* Centre le point sur la coordonnée */
+    box-shadow: 0 0 10px #fdfcfd;             /* Halo lumineux */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Effet au survol des points de la carte */
+.point:hover {
+    background-color: #daff07;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Positionnement exact en % de chaque point */
+.point-1  { left: 13%;  top: 41.69%; }  /* Musée Ghibli */
+.point-2  { left: 37.7%; top: 49.5%; }  /* Shibuya */
+.point-3  { left: 36.2%; top: 39%; }  /* Statue de Godzilla */
+.point-4  { left: 36.5%; top: 22.5%; }  /* Gashapon No Depato */
+.point-5  { left: 41.2%; top: 28%; }  /* Tokyo Dome City */
+.point-6  { left: 53%; top: 26.2%; }  /* Parc Ueno */
+.point-7  { left: 51.5%; top: 37%; }  /* Akihabara */
+.point-8  { left: 53.7%; top: 38%; }  /* Sega Center */
+.point-9  { left: 57.2%; top: 49%; }  /* Monja Street */
+.point-10 { left: 52.3%; top: 61%; }  /* Statue de Gundam */
+
+/* ==========================================================================
+   3. SECTIONS LIEUX (ZIG-ZAG)
+   ========================================================================== */
+.lieu {
+    display: flex;         /* Image et texte côte à côte */
+    align-items: center;   /* Alignement vertical */
+    gap: 20px;             
+    margin-bottom: 30px;
+    display: flex;         
+    align-items: center;   
+    gap: 20px;             
+    margin-bottom: 30px;   
+    scroll-margin-top: 30px; /* Force le défilement à s'arrêter 30px AVANT le titre pour souffler */ 
+}
+
+.lieu img {
+    width: 48%;
+    height: 350px; 
+    object-fit: cover;
+    flex-shrink: 0;        
+    border: 5px solid #ff65a3; 
+    box-shadow: 0 0 15px rgba(255, 101, 163, 0.6);
+    border-radius: 25px;   /* Coins arrondis */
+}
+
+.texte {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #ff65a3;
+}
+
+.texte h2 {
+    color: #03461d; /* Vert foncé pour les sous-titres */
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 1.8rem;    
+    margin-top: 0;        
+    margin-bottom: 12px;  
+}
+
+.texte p {
+    line-height: 1.6;
+}
+
+/* Effet d'alternance une ligne sur deux*/
+.lieu:nth-child(odd) {
+    flex-direction: row-reverse; 
+}
+
+.lieu:nth-child(odd) .texte {
     text-align: right; 
 }
-/*cible le titre h2 à l'intérieur de la div texte d'un lieu */
-.texte h2 {
-    color: #03461d;       
-    font-size: 1.8rem;    /* Une taille pour les sous-titres */
-    margin-top: 0;        /* Supprime l'espace du haut pour l'aligner à l'image */
-    margin-bottom: 12px;  /* Ajoute un joli espace avant le paragraphe en dessous */
+
+/* ==========================================================================
+   4. FOOTER
+   ========================================================================== */
+footer {
+    background-color: #0b251a;     
+    color: #ff65a3;                
+    text-align: center;            
+    padding: 25px 20px;            
+    margin-top: 40px;              
+    border-top: 3px solid #ff65a3; 
+}
+
+/* ==========================================================================
+   5. RESPONSIVE (MOBILE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero {
+        width: 95%; /* La carte prend plus de place sur petit écran */
+    }
+    .lieu {
+        flex-direction: column;
+    }
+    .lieu:nth-child(odd) {
+        flex-direction: column;   /* Annule le row-reverse sur mobile */
+    }
+    .lieu img {
+        width: 100%;
+        height: 250px; /* Réduit un peu la hauteur des images sur mobile */
+    }
+    .lieu:nth-child(odd) .texte {
+        text-align: left;
+    }
 }
