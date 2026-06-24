@@ -1,7 +1,85 @@
-.lieu {
-    display: flex;
+header {
+    text-align: center;      /* Garde le titre centré */
+    padding: 50px 20px;      /* Donne de l'espace au header */
+    background-color: #0b251a; /* Un magnifique vert sapin très foncé */
 }
 
+header h1 {
+    color: #ff65a3;          /* Un rose néon qui ressort sur le vert */
+    font-size: 3.5rem;       /* Une grande taille pour qu'il soit bien en évidence */
+    font-family: 'Arial Black', sans-serif; /* Une police épaisse */
+    text-transform: uppercase; /* En majuscules*/
+    letter-spacing: 3px;     /* Écarte un peu les lettres */
+    margin: 0;
+    
+    /* Encadrement blanc du titre  */
+
+    -webkit-text-stroke: 2px #ffffff;
+}
+
+.hero img {
+    width: 70%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+
+    /* LES DEUX LIGNES POUR CENTRER : */
+    display: block;       /* 1. On transforme l'image en bloc */
+    margin: 0 auto;       /* 2. Les marges de gauche et droite calculent automatiquement l'espace pour centrer */
+    border: 20px solid #531606;
+    box-shadow: 0 0 20px rgba(255, 101, 163, 0.7);
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.lieu {
+    display: flex;         /* Aligne l'image et la div "texte" côte à côte */
+    align-items: center;   /* Centre verticalement le texte par rapport à l'image */
+    gap: 20px;            /* Crée un espace de 20 pixels entre l'image et le texte */
+    margin-bottom: 30px;   /* Ajout de l'espace sous chaque lieu */
+}
+
+
 .lieu img {
-    width: 50%;
+    width: 10cm;
+    height: 5cm;
+    object-fit: cover;
+    flex-shrink: 0;        /* Empêche l'image de se déformer ou de rétrécir si le texte est long */
+    border: 5px solid #ff65a3; /* La bordure nette rose (comme le texte de ton titre) */
+    box-shadow: 0 0 15px rgba(255, 101, 163, 0.6);
+}
+
+/*stylise un peu le texte à droite */
+.texte {
+    flex: 1;/* Permet au texte de prendre tout l'espace restant à droite */
+}
+
+body {
+background-image: url('images/fleur.png');
+    
+    /* Ces 3 lignes permettent à l'image de fond de couvrir tout l'écran proprement : */
+    background-size: cover;       /* L'image s'étire pour remplir tout l'espace sans se déformer */
+    background-attachment: fixed; /* L'image reste fixe quand on fait défiler la page (effet très sympa !) */
+    background-position: center;  /* Centre la texture du bois */
+    
+
+    color: #5c1f07;           
+    margin: 2;                
+    font-family: Arial, sans-serif;
+}
+/*cible une section "lieu" sur deux (les paires : 2, 4, 6, 8, 10...) */
+.lieu:nth-child(even) {
+    flex-direction: row-reverse; /*inverse l'ordre de l'image et du texte ! */
+}
+
+/* Aligner le texte à droite quand l'image est à droite*/
+.lieu:nth-child(even) .texte {
+    text-align: right; 
+}
+/*cible le titre h2 à l'intérieur de la div texte d'un lieu */
+.texte h2 {
+    color: #03461d;       
+    font-size: 1.8rem;    /* Une taille pour les sous-titres */
+    margin-top: 0;        /* Supprime l'espace du haut pour l'aligner à l'image */
+    margin-bottom: 12px;  /* Ajoute un joli espace avant le paragraphe en dessous */
 }
