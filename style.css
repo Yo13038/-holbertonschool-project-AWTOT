@@ -53,7 +53,7 @@ header h1 {
 
 .texte {
     flex: 1;/* Permet au texte de prendre tout l'espace restant à droite */
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 20px;
     border-radius: 15px;
     border: 2px solid #ff65a3;
@@ -67,7 +67,7 @@ header h1 {
 
 body {
 background-image:
-    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.7)),
     url('images/fleur.png'); /* Le linear gradient sert à ajouter un voil blanc devant l'image de fond */
     
     /* Ces 3 lignes permettent à l'image de fond de couvrir tout l'écran proprement : */
