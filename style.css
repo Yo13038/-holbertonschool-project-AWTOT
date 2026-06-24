@@ -7,7 +7,7 @@ html {
 
 body {
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+        linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
         url('images/fleur.png'); /* Voile blanc devant l'image de fond */
     
     background-size: cover;       /* étire l'image */
@@ -47,7 +47,7 @@ header h1 {
     margin: 30px auto 40px; /* Centre le bloc de la carte */
     border: 20px solid #531606;
     box-shadow: 0 0 20px rgba(255, 101, 163, 0.7);
-    overflow: hidden;         /* Supprime un petit espace blanc sous l'image */
+    overflow: hidden;       /* Supprime un petit espace blanc sous l'image */
 }
 
 .hero img {
@@ -58,14 +58,14 @@ header h1 {
     object-position: center;
 }
 
-/* Style général des points néons cliquables */
+/* Style général des points cliquables */
 .point {
     position: absolute;
-    width: 25px;            /* Diamètre du point */
+    width: 25px;                       /* Diamètre du point */
     height: 25px;               
-    border-radius: 75%;                         /* Cercle parfait */
-    transform: translate(-50%, -50%);           /* Centre le point sur la coordonnée */
-    box-shadow: 0 0 10px #fdfcfd;             /* Halo lumineux */
+    border-radius: 75%;                /* Cercle parfait */
+    transform: translate(-50%, -50%);  /* Centre le point sur la coordonnée */
+    box-shadow: 0 0 10px #fdfcfd;    /* Halo lumineux */
     transition: all 0.3s ease;
     cursor: pointer;
     z-index: 10;
@@ -78,16 +78,16 @@ header h1 {
 }
 
 /* Positionnement exact en % de chaque point */
-.point-1  { left: 13%;  top: 41.69%; }  /* Musée Ghibli */
-.point-2  { left: 37.7%; top: 49.5%; }  /* Shibuya */
-.point-3  { left: 36.2%; top: 39%; }  /* Statue de Godzilla */
-.point-4  { left: 36.5%; top: 22.5%; }  /* Gashapon No Depato */
-.point-5  { left: 41.2%; top: 28%; }  /* Tokyo Dome City */
-.point-6  { left: 53%; top: 26.2%; }  /* Parc Ueno */
-.point-7  { left: 51.5%; top: 37%; }  /* Akihabara */
-.point-8  { left: 53.7%; top: 38%; }  /* Sega Center */
-.point-9  { left: 57.2%; top: 49%; }  /* Monja Street */
-.point-10 { left: 52.3%; top: 61%; }  /* Statue de Gundam */
+.point-1  { left: 13%;  top: 41.69%; } /* Musée Ghibli */
+.point-2  { left: 37.7%; top: 49.5%; } /* Shibuya */
+.point-3  { left: 36.2%; top: 39%; }   /* Statue de Godzilla */
+.point-4  { left: 36.5%; top: 22.5%; } /* Gashapon No Depato */
+.point-5  { left: 41.2%; top: 28%; }   /* Tokyo Dome City */
+.point-6  { left: 53%; top: 26.2%; }   /* Parc Ueno */
+.point-7  { left: 51.5%; top: 37%; }   /* Akihabara */
+.point-8  { left: 53.7%; top: 38%; }   /* Sega Center */
+.point-9  { left: 57.2%; top: 49%; }   /* Monja Street */
+.point-10 { left: 52.3%; top: 61%; }   /* Statue de Gundam */
 
 /* ==========================================================================
    3. SECTIONS LIEUX (ZIG-ZAG)
@@ -111,7 +111,7 @@ header h1 {
     flex-shrink: 0;        
     border: 5px solid #ff65a3; 
     box-shadow: 0 0 15px rgba(255, 101, 163, 0.6);
-    border-radius: 25px;   /* Coins arrondis */
+    border-radius: 25px;/* Coins arrondis */
 }
 
 .texte {
