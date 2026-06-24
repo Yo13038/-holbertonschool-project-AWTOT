@@ -1,21 +1,20 @@
 header {
     text-align: center;      /* Garde le titre centré */
-    padding: 50px 20px;      /* Donne de l'espace pour que le header respire */
+    padding: 50px 20px;      /* Donne de l'espace au header */
     background-color: #0b251a; /* Un magnifique vert sapin très foncé */
 }
 
 header h1 {
-    color: #ff65a3;          /* Un rose néon bien visible qui ressort sur le vert */
+    color: #ff65a3;          /* Un rose néon qui ressort sur le vert */
     font-size: 3.5rem;       /* Une grande taille pour qu'il soit bien en évidence */
-    font-family: 'Arial Black', sans-serif; /* Une police bien épaisse */
-    text-transform: uppercase; /* En majuscules pour le côté "affiche de voyage" */
+    font-family: 'Arial Black', sans-serif; /* Une police épaisse */
+    text-transform: uppercase; /* En majuscules*/
     letter-spacing: 3px;     /* Écarte un peu les lettres */
     margin: 0;
     
-    /* Optionnel : une ombre rose plus claire pour créer un léger effet de néon lumineux */
-    text-shadow: 0 0 10px rgba(255, 101, 163, 0.5); 
+    /* Encadrement blanc du titre  */
+
     -webkit-text-stroke: 2px #ffffff;
-    text-stroke: 2px #ffffff;
 }
 
 .hero img {
@@ -25,9 +24,9 @@ header h1 {
     object-position: center;
 
     /* LES DEUX LIGNES POUR CENTRER : */
-    display: block;       /* 1. On transforme l'image en bloc (elle prend toute sa ligne) */
+    display: block;       /* 1. On transforme l'image en bloc */
     margin: 0 auto;       /* 2. Les marges de gauche et droite calculent automatiquement l'espace pour centrer */
-    border: 10px solid #531606;
+    border: 20px solid #531606;
     box-shadow: 0 0 20px rgba(255, 101, 163, 0.7);
     margin-top: 30px;
     margin-bottom: 40px;
@@ -50,7 +49,7 @@ header h1 {
     box-shadow: 0 0 15px rgba(255, 101, 163, 0.6);
 }
 
-/* 3. Optionnel : On stylise un peu le texte à droite */
+/*stylise un peu le texte à droite */
 .texte {
     flex: 1;/* Permet au texte de prendre tout l'espace restant à droite */
 }
@@ -58,7 +57,7 @@ header h1 {
 body {
 background-image: url('images/fleur.png');
     
-    /* Ces 3 lignes permettent à l'image de bois de couvrir tout l'écran proprement : */
+    /* Ces 3 lignes permettent à l'image de fond de couvrir tout l'écran proprement : */
     background-size: cover;       /* L'image s'étire pour remplir tout l'espace sans se déformer */
     background-attachment: fixed; /* L'image reste fixe quand on fait défiler la page (effet très sympa !) */
     background-position: center;  /* Centre la texture du bois */
@@ -73,7 +72,7 @@ background-image: url('images/fleur.png');
     flex-direction: row-reverse; /*inverse l'ordre de l'image et du texte ! */
 }
 
-/* Optionnel : Aligner le texte à droite quand l'image est à droite*/
+/* Aligner le texte à droite quand l'image est à droite*/
 .lieu:nth-child(even) .texte {
     text-align: right; 
 }
