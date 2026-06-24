@@ -27,7 +27,7 @@ header h1 {
     /* LES DEUX LIGNES POUR CENTRER : */
     display: block;       /* 1. On transforme l'image en bloc (elle prend toute sa ligne) */
     margin: 0 auto;       /* 2. Les marges de gauche et droite calculent automatiquement l'espace pour centrer */
-    border: 10px solid #ff65a3;
+    border: 10px solid #531606;
     box-shadow: 0 0 20px rgba(255, 101, 163, 0.7);
     margin-top: 30px;
     margin-bottom: 40px;
